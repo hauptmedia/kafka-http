@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	echo Usage $0 topic 1>&2
+	exit 1
+fi
+
+ab -n1000000 -c20 -T 'application/x-www-form-urlencoded' -p post_messages http://127.0.0.1:8080/topic/$1/
+
