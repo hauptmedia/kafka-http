@@ -3,7 +3,7 @@ package de.hauptmedia.http
 import javax.servlet.http.HttpServletResponse
 
 import org.json4s.DefaultFormats
-import org.json4s.jackson.Serialization
+import org.json4s.native.Serialization
 
 import scala.xml.Node
 

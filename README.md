@@ -14,3 +14,10 @@ cd scripts
 
 You can get messages via `http://127.0.0.1:8080/topic/topic1/?limit=25`
 
+## Build instructions
+
+Just run `sbt assembly` to build a standalone uber-jar file which can be used for deployments. 
+
+```bash
+sbt assembly
+```

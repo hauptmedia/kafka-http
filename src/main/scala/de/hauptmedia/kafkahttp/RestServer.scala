@@ -12,7 +12,7 @@ import kafka.consumer.{Consumer, ConsumerConfig}
 import kafka.producer.{KeyedMessage, Producer, ProducerConfig}
 import kafka.serializer.StringDecoder
 import org.json4s.DefaultFormats
-import org.json4s.jackson.JsonMethods._
+import org.json4s.native.JsonMethods._
 
 import scala.collection.mutable
 
