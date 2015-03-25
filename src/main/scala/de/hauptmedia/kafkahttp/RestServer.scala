@@ -33,8 +33,8 @@ object RestServer {
   val useEmbeddedProducerEndpoint = producerProperties.getProperty("metadata.broker.list") == "embedded"
   val useEmebddedConsumerEndpoint = consumerProperties.getProperty("zookeeper.connect") == "embedded"
 
-  println("Starting HTTP listener at " + config.getString("http.host") + ":" + config.getInt("http.port"))
-  listen(config.getString("http.host"), config.getInt("http.port"))
+  println("Starting HTTP listener at " + config.getString("http.addr") + ":" + config.getInt("http.port"))
+  listen(config.getString("http.addr"), config.getInt("http.port"))
 
   if (producerTopics.size == 0 && consumerTopics.size == 0) {
     println("No topics specified. Please configure the topics in your configuration. Exiting now!")
@@ -129,7 +129,7 @@ object RestServer {
   def printEndpoints = {
     println("Configured consumer endpoints:");
     consumerTopics foreach {
-      t => println("[GET]     http://" + config.getString("http.host") + ":" + config.getInt("http.port") + "/topic/" + t + "/")
+      t => println("[GET]     http://" + config.getString("http.addr") + ":" + config.getInt("http.port") + "/topic/" + t + "/")
     }
 
     println
@@ -137,7 +137,7 @@ object RestServer {
     println("Configured producer endpoints:");
 
     producerTopics foreach {
-      t => println("[POST]     http://" + config.getString("http.host") + ":" + config.getInt("http.port") + "/topic/" + t + "/")
+      t => println("[POST]     http://" + config.getString("http.addr") + ":" + config.getInt("http.port") + "/topic/" + t + "/")
     }
 
     println
