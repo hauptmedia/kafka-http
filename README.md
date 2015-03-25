@@ -63,14 +63,14 @@ cd scripts
 `http.port`                     - Port where the http connector should bind to
 
 
-`consumer.zookeeper.connect`    - Specifies the zookeeper connection string in the form hostname:port where host and port are the host and port of a zookeeper server (e.g. `hostname1:port1,hostname2:port2`)
+`consumer.zookeeper.connect`    - Specifies a comma seperated list in the form hostname:port where host and port are the host and port of a zookeeper server
 
 `consumer.group.id`             - A string that uniquely identifies the group of consumer processes to which this consumer belongs
 
 `consumer.topics`               - Comma seperated list of topics where a consumer endpoint should be registered (GET /topic/name)
 
 
-`producer.metadata.broker.list` - Defines where the producer can find a one or more brokers to determine the leader for each topic (e.g. `broker1:9092,broker2:9092`)
+`producer.metadata.broker.list` - Specifies a comma seperated list in the form hostname:port where the producer can find a one or more brokers to determine the leader for each topic
 
 `producer.topics`               - Comma seperated list of topics where a producer endpoint should be registered (POST /topc/name)
 
