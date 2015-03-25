@@ -58,7 +58,17 @@ cd scripts
 
 ## Available configuration keys
 
-`http.addr`         - IP address where the http connector should bind to
-`http.port`         - Port where the http connector should bind to
-`consumer.topics`   - Comma seperated list of topics where a consumer endpoint should be registered (GET /topic/name)
-`producer.topics`   - Comma seperated list of topics where a producer endpoint should be registered (POST /topc/name)
+`http.addr`                     - IP address where the http connector should bind to
+`http.port`                     - Port where the http connector should bind to
+
+`consumer.zookeeper.connect`    - Specifies the zookeeper connection string in the form hostname:port where host and port are the host and port of a zookeeper server (e.g. `hostname1:port1,hostname2:port2`)
+`consumer.group.id`             - A string that uniquely identifies the group of consumer processes to which this consumer belongs
+`consumer.topics`               - Comma seperated list of topics where a consumer endpoint should be registered (GET /topic/name)
+
+
+`producer.metadata.broker.list` - Defines where the producer can find a one or more brokers to determine the leader for each topic (e.g. `broker1:9092,broker2:9092`)
+`producer.topics`               - Comma seperated list of topics where a producer endpoint should be registered (POST /topc/name)
+
+## Docker container
+
+Have a look at https://github.com/hauptmedia/docker-kafka-http for a dockerized version of this application
