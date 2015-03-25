@@ -11,7 +11,7 @@ sbt assembly
 
 ## Example usage
 
-You can run the jar without any parameters. It will then start the an embedded Kafka/ZooKeeper instance and create
+You can run the jar without any parameters. It will then start an embedded Kafka/ZooKeeper instance and create
 a producer and consumer endpoint for the topic `test`. 
 
 ```bash
@@ -38,6 +38,8 @@ http://localhost:8080/topic/test/
 
 ## Get messages for a topic
 
+You can limit the amount of message you want to receive if you specify the `limit` parameter. 
+ 
 ```bash
 curl "http://localhost:8080/topic/test/?limit=2"
 ```
@@ -54,5 +56,9 @@ cd scripts
 ```
 
 
-You can get messages via `http://127.0.0.1:8080/topic/topic1/?limit=25`
+## Available configuration keys
 
+`http.addr`         - IP address where the http connector should bind to
+`http.port`         - Port where the http connector should bind to
+`consumer.topics`   - Comma seperated list of topics where a consumer endpoint should be registered (GET /topic/name)
+`producer.topics`   - Comma seperated list of topics where a producer endpoint should be registered (POST /topc/name)
